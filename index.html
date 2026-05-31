@@ -2,182 +2,225 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Pub Instagram 1080x1080</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Pub Instagram Ads 1080x1080</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{width:1080px;height:1080px;overflow:hidden;background:#080808}
-.ad{width:1080px;height:1080px;background:#080808;font-family:'DM Sans',sans-serif;position:relative;display:flex;flex-direction:column}
+html,body{width:1080px;height:1080px;overflow:hidden;background:#000}
 
-.deco{height:2px;background:linear-gradient(90deg,transparent,#c8a96e 40%,#f5e4b8 50%,#c8a96e 60%,transparent);flex-shrink:0}
-.glow{position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(200,169,110,.1) 0%,transparent 70%);pointer-events:none}
+.ad{width:1080px;height:1080px;position:relative;overflow:hidden;font-family:'DM Sans',sans-serif}
 
-/* TOP 160px */
-.top{height:160px;padding:22px 48px 0;flex-shrink:0;position:relative;z-index:2}
-.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,169,110,.1);border:.5px solid rgba(200,169,110,.4);padding:6px 14px;margin-bottom:12px}
-.badge span{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#c8a96e}
-.h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:400;color:#f5f2ee;line-height:1.05;margin-bottom:4px}
-.h1 em{color:#c8a96e;font-style:italic}
-.sub{font-size:17px;color:rgba(245,242,238,.4)}
+/* IMAGE DE FOND plein écran */
+.bg{position:absolute;inset:0;z-index:0}
+.bg img{width:100%;height:100%;object-fit:cover}
+.bg::after{content:'';position:absolute;inset:0;background:linear-gradient(
+  to bottom,
+  rgba(0,0,0,0.3) 0%,
+  rgba(0,0,0,0.15) 30%,
+  rgba(0,0,0,0.5) 60%,
+  rgba(0,0,0,0.92) 100%
+)}
 
-/* MOCKUPS 790px */
-.mockups{height:790px;display:flex;align-items:flex-end;gap:18px;padding:0 36px;flex-shrink:0;overflow:hidden;position:relative;z-index:2}
+/* CONTENU */
+.content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:space-between;padding:56px 64px}
 
-/* DESKTOP */
-.desk{flex:1;height:100%;background:#131313;border-radius:8px 8px 0 0;overflow:hidden;border:.5px solid rgba(200,169,110,.22);display:flex;flex-direction:column;box-shadow:0 -4px 20px rgba(200,169,110,.05)}
-.dbar{background:#1a1a1a;padding:9px 12px;display:flex;gap:5px;flex-shrink:0;border-bottom:.5px solid rgba(200,169,110,.06)}
-.dot{width:10px;height:10px;border-radius:50%}.d1{background:#ff5f57}.d2{background:#febc2e}.d3{background:#28c840}
-.dscreen{flex:1;background:#070707;overflow:hidden;position:relative}
-.dscroll{animation:sD 10s ease-in-out infinite;display:flex;flex-direction:column}
-@keyframes sD{0%,10%{transform:translateY(0)}42%,52%{transform:translateY(-50%)}90%,100%{transform:translateY(0)}}
+/* TOP */
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.logo{font-family:'Playfair Display',serif;font-size:28px;color:#fff;letter-spacing:.04em}
+.logo em{color:#c8a96e;font-style:normal}
+.badge{background:rgba(200,169,110,0.15);border:1px solid rgba(200,169,110,0.6);padding:8px 18px;backdrop-filter:blur(4px)}
+.badge span{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#c8a96e;font-weight:500}
 
-.dnav{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:.5px solid rgba(200,169,110,.06);flex-shrink:0}
-.dlogo{font-family:'Playfair Display',serif;font-size:13px;color:#f5f2ee}
-.dlinks{display:flex;gap:14px}
-.dl{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,242,238,.28)}.dl.a{color:#c8a96e}
-.dhero{padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center;flex-shrink:0}
-.dtitle{font-family:'Playfair Display',serif;font-size:16px;color:#f5f2ee;line-height:1.2;margin-bottom:5px}
+/* MOCKUPS au centre */
+.mockups{display:flex;align-items:flex-end;justify-content:center;gap:20px;flex:1;padding:40px 0 20px}
+
+/* Desktop mockup */
+.desk{width:560px;background:rgba(10,10,10,0.85);border-radius:8px 8px 0 0;overflow:hidden;border:.5px solid rgba(200,169,110,.3);backdrop-filter:blur(8px);box-shadow:0 0 60px rgba(0,0,0,.5),0 0 0 .5px rgba(200,169,110,.2)}
+.dbar{background:rgba(20,20,20,.9);padding:10px 14px;display:flex;gap:6px;border-bottom:.5px solid rgba(200,169,110,.1)}
+.dot{width:11px;height:11px;border-radius:50%}.d1{background:#ff5f57}.d2{background:#febc2e}.d3{background:#28c840}
+.dscreen{height:280px;overflow:hidden;position:relative}
+.dscroll{animation:sD 10s ease-in-out infinite}
+@keyframes sD{0%,12%{transform:translateY(0)}42%,52%{transform:translateY(-50%)}90%,100%{transform:translateY(0)}}
+.dnav{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:.5px solid rgba(200,169,110,.08);background:rgba(8,8,8,.95)}
+.dlogo{font-family:'Playfair Display',serif;font-size:11px;color:#f5f2ee}
+.dlinks{display:flex;gap:12px}
+.dl{font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,242,238,.3)}.dl.a{color:#c8a96e}
+.dhero{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px 14px;align-items:center;background:rgba(7,7,7,.95)}
+.dtitle{font-family:'Playfair Display',serif;font-size:14px;color:#f5f2ee;line-height:1.2;margin-bottom:4px}
 .dtitle em{color:#c8a96e;font-style:italic}
-.dp{font-size:9px;color:rgba(245,242,238,.26);margin-bottom:7px}
-.dbtn{display:inline-block;background:#c8a96e;color:#000;font-size:8px;padding:5px 10px;font-weight:500;text-transform:uppercase}
-.dhi{height:100px;border-radius:2px;overflow:hidden}
+.dp{font-size:7.5px;color:rgba(245,242,238,.3);margin-bottom:6px}
+.dbtn{display:inline-block;background:#c8a96e;color:#000;font-size:7px;padding:4px 9px;font-weight:600;text-transform:uppercase}
+.dhi{height:78px;border-radius:2px;overflow:hidden}
 .dhi img{width:100%;height:100%;object-fit:cover}
-.dvoy{padding:12px 16px;border-top:.5px solid rgba(200,169,110,.05);flex-shrink:0}
-.dvt{font-family:'Playfair Display',serif;font-size:12px;font-style:italic;color:#f5f2ee;margin-bottom:8px}
-.dvg{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
-.dvc{height:64px;border-radius:2px;overflow:hidden;position:relative}
+.dvoy{padding:10px 14px;border-top:.5px solid rgba(200,169,110,.06);background:rgba(7,7,7,.95)}
+.dvt{font-family:'Playfair Display',serif;font-size:10px;font-style:italic;color:#f5f2ee;margin-bottom:6px}
+.dvg{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.dvc{height:52px;border-radius:1px;overflow:hidden;position:relative}
 .dvc img{width:100%;height:100%;object-fit:cover}
-.dvc::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72),transparent)}
-.dvc-ov{position:absolute;bottom:0;left:0;right:0;padding:5px 6px;z-index:2}
-.dvc-c{font-size:7px;letter-spacing:.07em;text-transform:uppercase;color:#c8a96e}
-.dvc-n{font-family:'Playfair Display',serif;font-size:9px;font-style:italic;color:#f5f2ee}
-.dgal{padding:10px 16px;border-top:.5px solid rgba(200,169,110,.05);flex-shrink:0}
+.dvc::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),transparent)}
+.dvc-ov{position:absolute;bottom:0;left:0;right:0;padding:4px 5px;z-index:2}
+.dvc-c{font-size:6px;letter-spacing:.07em;text-transform:uppercase;color:#c8a96e}
+.dvc-n{font-family:'Playfair Display',serif;font-size:7.5px;font-style:italic;color:#f5f2ee}
+.dgal{padding:8px 14px;background:rgba(7,7,7,.95);border-top:.5px solid rgba(200,169,110,.06)}
 .dgg{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
-.dgc{height:46px;border-radius:1px;overflow:hidden}
+.dgc{height:38px;border-radius:1px;overflow:hidden}
 .dgc img{width:100%;height:100%;object-fit:cover}
 
-/* MOBILE */
-.mob{width:188px;height:100%;background:#131313;border-radius:14px;overflow:hidden;border:.5px solid rgba(200,169,110,.28);flex-shrink:0;display:flex;flex-direction:column;box-shadow:0 -4px 16px rgba(200,169,110,.04)}
-.mnotch{background:#090909;height:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.mpill{width:32px;height:4px;background:#1a1a1a;border-radius:2px}
-.mscreen{flex:1;background:#080808;overflow:hidden;position:relative}
-.mscroll{animation:sM 10s ease-in-out infinite;animation-delay:1.8s;display:flex;flex-direction:column}
-@keyframes sM{0%,10%{transform:translateY(0)}42%,52%{transform:translateY(-50%)}90%,100%{transform:translateY(0)}}
-.mnav{padding:8px 12px;border-bottom:.5px solid rgba(200,169,110,.06);flex-shrink:0}
-.mlogo{font-family:'Playfair Display',serif;font-size:11px;color:#f5f2ee}
-.mhi{height:90px;overflow:hidden;flex-shrink:0}
+/* Mobile mockup */
+.mob{width:176px;background:rgba(10,10,10,.85);border-radius:14px;overflow:hidden;border:.5px solid rgba(200,169,110,.3);backdrop-filter:blur(8px);box-shadow:0 0 40px rgba(0,0,0,.5)}
+.mnotch{background:rgba(5,5,5,.95);height:18px;display:flex;align-items:center;justify-content:center}
+.mpill{width:28px;height:3px;background:#222;border-radius:2px}
+.mscreen{height:280px;overflow:hidden;background:rgba(8,8,8,.95)}
+.mscroll{animation:sM 10s ease-in-out infinite;animation-delay:2s}
+@keyframes sM{0%,12%{transform:translateY(0)}42%,52%{transform:translateY(-50%)}90%,100%{transform:translateY(0)}}
+.mnav{padding:6px 10px;border-bottom:.5px solid rgba(200,169,110,.07);background:rgba(8,8,8,.95)}
+.mlogo{font-family:'Playfair Display',serif;font-size:9px;color:#f5f2ee}
+.mhi{height:74px;overflow:hidden}
 .mhi img{width:100%;height:100%;object-fit:cover}
-.mhc{padding:9px 12px;flex-shrink:0}
-.mh{font-family:'Playfair Display',serif;font-size:14px;color:#f5f2ee;line-height:1.18;margin-bottom:6px}
+.mhc{padding:7px 10px;background:rgba(8,8,8,.95)}
+.mh{font-family:'Playfair Display',serif;font-size:12px;color:#f5f2ee;line-height:1.18;margin-bottom:5px}
 .mh em{color:#c8a96e;font-style:italic}
-.mb1{background:#c8a96e;color:#000;font-size:9px;padding:5px;text-align:center;font-weight:500;text-transform:uppercase;margin-bottom:3px}
-.mb2{border:.5px solid rgba(245,242,238,.16);color:rgba(245,242,238,.3);font-size:9px;padding:4px;text-align:center}
-.mvoy{padding:7px 12px;border-top:.5px solid rgba(200,169,110,.05);flex-shrink:0}
-.mvc{height:56px;overflow:hidden;position:relative;margin-bottom:3px;border-radius:1px}
+.mb1{background:#c8a96e;color:#000;font-size:8px;padding:4px;text-align:center;font-weight:600;text-transform:uppercase;margin-bottom:2px}
+.mb2{border:.5px solid rgba(245,242,238,.15);color:rgba(245,242,238,.3);font-size:8px;padding:3px;text-align:center}
+.mvoy{padding:5px 10px;border-top:.5px solid rgba(200,169,110,.06);background:rgba(8,8,8,.95)}
+.mvc{height:50px;overflow:hidden;position:relative;margin-bottom:2px;border-radius:1px}
 .mvc img{width:100%;height:100%;object-fit:cover}
-.mvc::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72),transparent)}
-.mvc-ov{position:absolute;bottom:0;left:0;right:0;padding:4px 6px;z-index:2}
-.mvc-c{font-size:7px;letter-spacing:.07em;text-transform:uppercase;color:#c8a96e}
-.mvc-n{font-family:'Playfair Display',serif;font-size:9px;font-style:italic;color:#f5f2ee}
-.mgal{padding:6px 12px;border-top:.5px solid rgba(200,169,110,.05);flex-shrink:0}
-.mgg{display:grid;grid-template-columns:1fr 1fr;gap:3px}
-.mgc{height:40px;overflow:hidden;border-radius:1px}
+.mvc::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),transparent)}
+.mvc-ov{position:absolute;bottom:0;left:0;right:0;padding:3px 5px;z-index:2}
+.mvc-c{font-size:6px;letter-spacing:.07em;text-transform:uppercase;color:#c8a96e}
+.mvc-n{font-family:'Playfair Display',serif;font-size:8px;font-style:italic;color:#f5f2ee}
+.mgal{padding:5px 10px;border-top:.5px solid rgba(200,169,110,.06);background:rgba(8,8,8,.95)}
+.mgg{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.mgc{height:36px;overflow:hidden;border-radius:1px}
 .mgc img{width:100%;height:100%;object-fit:cover}
+/* page 2 mobile */
+.mnav2{padding:6px 10px;border-bottom:.5px solid rgba(200,169,110,.07);background:rgba(8,8,8,.95)}
+.mhi2{height:74px;overflow:hidden}
 
-/* BOTTOM 130px */
-.bottom{height:130px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;border-top:.5px solid rgba(200,169,110,.12);flex-shrink:0;position:relative;z-index:2}
-.price{display:flex;align-items:baseline;gap:12px}
-.pnew{font-family:'Playfair Display',serif;font-size:64px;color:#c8a96e;line-height:1}
-.pinfo{}
-.pold{font-size:14px;color:rgba(245,242,238,.25);text-decoration:line-through}
-.psub{font-size:14px;color:rgba(245,242,238,.4)}
-.cta{display:flex;align-items:center;gap:10px;background:#c8a96e;color:#000;font-size:16px;font-weight:500;padding:16px 26px;letter-spacing:.08em;text-transform:uppercase;position:relative;overflow:hidden}
-.cta::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);animation:sh 2.5s ease-in-out infinite}
+/* BOTTOM */
+.bottom{display:flex;align-items:flex-end;justify-content:space-between}
+.left-text{}
+.tagline{font-size:18px;color:rgba(255,255,255,.5);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.h1{font-family:'Playfair Display',serif;font-size:72px;font-weight:400;color:#fff;line-height:1.0;margin-bottom:6px}
+.h1 em{color:#c8a96e;font-style:italic}
+.offer{display:flex;align-items:baseline;gap:16px;margin-bottom:0}
+.price-new{font-family:'Playfair Display',serif;font-size:52px;color:#c8a96e;line-height:1}
+.price-old{font-size:18px;color:rgba(255,255,255,.35);text-decoration:line-through}
+.price-sub{font-size:16px;color:rgba(255,255,255,.45);margin-top:2px}
+.right-cta{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.cta{display:flex;align-items:center;gap:10px;background:#c8a96e;color:#000;font-size:18px;font-weight:600;padding:18px 30px;letter-spacing:.08em;text-transform:uppercase;position:relative;overflow:hidden}
+.cta::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:sh 2.5s ease-in-out infinite}
 @keyframes sh{to{left:160%}}
-.cta svg{width:20px;height:20px;fill:#000}
+.cta svg{width:22px;height:22px;fill:#000}
+.days{font-size:14px;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase;text-align:right}
 </style>
 </head>
 <body>
 <div class="ad">
-<div class="glow"></div>
-<div class="deco"></div>
-<div class="top">
-  <div class="badge"><span>Offre d'été — Places limitées</span></div>
-  <div class="h1">Votre site pro, <em>livré en 7 jours.</em></div>
-  <div class="sub">Artisans · Commerçants · Passionnés de photo, sport, musique...</div>
-</div>
-<div class="mockups">
-  <div class="desk">
-    <div class="dbar"><div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div></div>
-    <div class="dscreen"><div class="dscroll">
-      <div class="dnav"><div class="dlogo">PHOTOS DU MONDE</div><div class="dlinks"><span class="dl a">Accueil</span><span class="dl">Destinations</span><span class="dl">Thèmes</span><span class="dl">Galerie</span></div></div>
-      <div class="dhero"><div><div class="dtitle">Explorer le monde<br><em>à travers l'objectif.</em></div><div class="dp">Voyages · Nature · Photo</div><div class="dbtn">Voir les voyages</div></div><div class="dhi"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_400,h_200/tgyzt5eagy4irx0m9wa1.jpg"></div></div>
-      <div class="dvoy"><div class="dvt">Voyages</div><div class="dvg">
-        <div class="dvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_300,h_150/ermulsnbyye2vqn76i1l.jpg"><div class="dvc-ov"><div class="dvc-c">Éthiopie</div><div class="dvc-n">Entre désert & Volcans</div></div></div>
-        <div class="dvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_300,h_150/vskwd2iaclcvnadwcdmx.jpg"><div class="dvc-ov"><div class="dvc-c">Norvège</div><div class="dvc-n">Glacé & Étoilé</div></div></div>
-        <div class="dvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_300,h_150/qdxllapek6zg7fenbprd.jpg"><div class="dvc-ov"><div class="dvc-c">Cuba</div><div class="dvc-n">Musique & Couleurs</div></div></div>
-      </div></div>
-      <div class="dgal"><div class="dgg">
-        <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/jbrfny2ox7nelcflqmqm.jpg"></div>
-        <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/tvhmnr8vvou9iv2olgtj.jpg"></div>
-        <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/ae8orkrhwemrjwckfgyf.jpg"></div>
-        <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/addznvpvac6hqcowrmy5.jpg"></div>
-        <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/ompzyk4ni21hgjrabzyy.jpg"></div>
-      </div></div>
-      <!-- page 2 -->
-      <div class="dnav"><div class="dlogo">PHOTOS DU MONDE</div><div class="dlinks"><span class="dl">Accueil</span><span class="dl a">Destinations</span><span class="dl">Thèmes</span><span class="dl">Galerie</span></div></div>
-      <div class="dhero"><div><div class="dtitle">Explorer le monde<br><em>à travers l'objectif.</em></div><div class="dp">Voyages · Nature · Photo</div><div class="dbtn">Voir les voyages</div></div><div class="dhi"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_400,h_200/exdfmmd9bs2trqfctofs.jpg"></div></div>
-      <div class="dvoy"><div class="dvt">Voyages</div><div class="dvg">
-        <div class="dvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_300,h_150/rezclg8sxfoxmwcdqaa9.jpg"><div class="dvc-ov"><div class="dvc-c">Éthiopie</div><div class="dvc-n">Entre désert & Volcans</div></div></div>
-        <div class="dvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_300,h_150/vfkhlxklxfoa3xmsivcl.jpg"><div class="dvc-ov"><div class="dvc-c">Norvège</div><div class="dvc-n">Glacé & Étoilé</div></div></div>
-        <div class="dvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_300,h_150/xpjf9wasgql2tjoazhxq.jpg"><div class="dvc-ov"><div class="dvc-c">Cuba</div><div class="dvc-n">Musique & Couleurs</div></div></div>
-      </div></div>
-      <div class="dgal"><div class="dgg">
-        <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/v8j2oxe6paim6i1gb7r2.jpg"></div>
-        <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/l7aoloqgkrcxcyym4ln0.jpg"></div>
-        <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/p48pyidphrqmggiikmxq.jpg"></div>
-        <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/dznaqdijcrrq8bypqnpo.jpg"></div>
-        <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/ztobsjjtkcxh3as86yig.jpg"></div>
-      </div></div>
-    </div></div>
+  <!-- FOND -->
+  <div class="bg">
+    <img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_1080,h_1080/tgyzt5eagy4irx0m9wa1.jpg">
   </div>
-  <div class="mob">
-    <div class="mnotch"><div class="mpill"></div></div>
-    <div class="mscreen"><div class="mscroll">
-      <div class="mnav"><div class="mlogo">PHOTOS DU MONDE</div></div>
-      <div class="mhi"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_300,h_200/exdfmmd9bs2trqfctofs.jpg"></div>
-      <div class="mhc"><div class="mh">Explorer le monde<br><em>à travers l'objectif.</em></div><div class="mb1">Voir les voyages</div><div class="mb2">Galerie</div></div>
-      <div class="mvoy">
-        <div class="mvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_300,h_150/ermulsnbyye2vqn76i1l.jpg"><div class="mvc-ov"><div class="mvc-c">Éthiopie</div><div class="mvc-n">Entre désert & Volcans</div></div></div>
-        <div class="mvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_300,h_150/vskwd2iaclcvnadwcdmx.jpg"><div class="mvc-ov"><div class="mvc-c">Norvège</div><div class="mvc-n">Glacé & Étoilé</div></div></div>
+
+  <div class="content">
+    <!-- TOP -->
+    <div class="top">
+      <div class="logo">Marcopolo<em>.</em>Studio</div>
+      <div class="badge"><span>Offre d'été — Places limitées</span></div>
+    </div>
+
+    <!-- MOCKUPS -->
+    <div class="mockups">
+      <div class="desk">
+        <div class="dbar"><div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div></div>
+        <div class="dscreen"><div class="dscroll">
+          <div class="dnav"><div class="dlogo">PHOTOS DU MONDE</div><div class="dlinks"><span class="dl a">Accueil</span><span class="dl">Destinations</span><span class="dl">Thèmes</span><span class="dl">Galerie</span></div></div>
+          <div class="dhero"><div><div class="dtitle">Explorer le monde<br><em>à travers l'objectif.</em></div><div class="dp">Voyages · Nature · Photo</div><div class="dbtn">Voir les voyages</div></div><div class="dhi"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_400,h_200/exdfmmd9bs2trqfctofs.jpg"></div></div>
+          <div class="dvoy"><div class="dvt">Voyages</div><div class="dvg">
+            <div class="dvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_300,h_150/ermulsnbyye2vqn76i1l.jpg"><div class="dvc-ov"><div class="dvc-c">Éthiopie</div><div class="dvc-n">Entre désert & Volcans</div></div></div>
+            <div class="dvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_300,h_150/vskwd2iaclcvnadwcdmx.jpg"><div class="dvc-ov"><div class="dvc-c">Norvège</div><div class="dvc-n">Glacé & Étoilé</div></div></div>
+            <div class="dvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_300,h_150/qdxllapek6zg7fenbprd.jpg"><div class="dvc-ov"><div class="dvc-c">Cuba</div><div class="dvc-n">Musique & Couleurs</div></div></div>
+          </div></div>
+          <div class="dgal"><div class="dgg">
+            <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/jbrfny2ox7nelcflqmqm.jpg"></div>
+            <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/tvhmnr8vvou9iv2olgtj.jpg"></div>
+            <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/ae8orkrhwemrjwckfgyf.jpg"></div>
+            <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/addznvpvac6hqcowrmy5.jpg"></div>
+            <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/ompzyk4ni21hgjrabzyy.jpg"></div>
+          </div></div>
+          <!-- page 2 -->
+          <div class="dnav"><div class="dlogo">PHOTOS DU MONDE</div><div class="dlinks"><span class="dl">Accueil</span><span class="dl a">Destinations</span><span class="dl">Thèmes</span><span class="dl">Galerie</span></div></div>
+          <div class="dhero"><div><div class="dtitle">Explorer le monde<br><em>à travers l'objectif.</em></div><div class="dp">Voyages · Nature · Photo</div><div class="dbtn">Voir les voyages</div></div><div class="dhi"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_400,h_200/rezclg8sxfoxmwcdqaa9.jpg"></div></div>
+          <div class="dvoy"><div class="dvt">Voyages</div><div class="dvg">
+            <div class="dvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_300,h_150/vfkhlxklxfoa3xmsivcl.jpg"><div class="dvc-ov"><div class="dvc-c">Éthiopie</div><div class="dvc-n">Entre désert & Volcans</div></div></div>
+            <div class="dvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_300,h_150/xpjf9wasgql2tjoazhxq.jpg"><div class="dvc-ov"><div class="dvc-c">Norvège</div><div class="dvc-n">Glacé & Étoilé</div></div></div>
+            <div class="dvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_300,h_150/v8j2oxe6paim6i1gb7r2.jpg"><div class="dvc-ov"><div class="dvc-c">Cuba</div><div class="dvc-n">Musique & Couleurs</div></div></div>
+          </div></div>
+          <div class="dgal"><div class="dgg">
+            <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/l7aoloqgkrcxcyym4ln0.jpg"></div>
+            <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/p48pyidphrqmggiikmxq.jpg"></div>
+            <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/dznaqdijcrrq8bypqnpo.jpg"></div>
+            <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/ztobsjjtkcxh3as86yig.jpg"></div>
+            <div class="dgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/tgyzt5eagy4irx0m9wa1.jpg"></div>
+          </div></div>
+        </div></div>
       </div>
-      <div class="mgal"><div class="mgg">
-        <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/jbrfny2ox7nelcflqmqm.jpg"></div>
-        <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/tvhmnr8vvou9iv2olgtj.jpg"></div>
-        <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/ae8orkrhwemrjwckfgyf.jpg"></div>
-        <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/addznvpvac6hqcowrmy5.jpg"></div>
-      </div></div>
-      <!-- page 2 -->
-      <div class="mnav"><div class="mlogo">PHOTOS DU MONDE</div></div>
-      <div class="mhi"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_300,h_200/tgyzt5eagy4irx0m9wa1.jpg"></div>
-      <div class="mhc"><div class="mh">Explorer le monde<br><em>à travers l'objectif.</em></div><div class="mb1">Voir les voyages</div><div class="mb2">Galerie</div></div>
-      <div class="mvoy">
-        <div class="mvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_300,h_150/qdxllapek6zg7fenbprd.jpg"><div class="mvc-ov"><div class="mvc-c">Cuba</div><div class="mvc-n">Musique & Couleurs</div></div></div>
-        <div class="mvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_300,h_150/rezclg8sxfoxmwcdqaa9.jpg"><div class="mvc-ov"><div class="mvc-c">Éthiopie</div><div class="mvc-n">Entre désert & Volcans</div></div></div>
+      <div class="mob">
+        <div class="mnotch"><div class="mpill"></div></div>
+        <div class="mscreen"><div class="mscroll">
+          <div class="mnav"><div class="mlogo">PHOTOS DU MONDE</div></div>
+          <div class="mhi"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_300,h_200/exdfmmd9bs2trqfctofs.jpg"></div>
+          <div class="mhc"><div class="mh">Explorer le monde<br><em>à travers l'objectif.</em></div><div class="mb1">Voir les voyages</div><div class="mb2">Galerie</div></div>
+          <div class="mvoy">
+            <div class="mvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_300,h_150/ermulsnbyye2vqn76i1l.jpg"><div class="mvc-ov"><div class="mvc-c">Éthiopie</div><div class="mvc-n">Entre désert & Volcans</div></div></div>
+            <div class="mvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_300,h_150/vskwd2iaclcvnadwcdmx.jpg"><div class="mvc-ov"><div class="mvc-c">Norvège</div><div class="mvc-n">Glacé & Étoilé</div></div></div>
+          </div>
+          <div class="mgal"><div class="mgg">
+            <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/jbrfny2ox7nelcflqmqm.jpg"></div>
+            <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/tvhmnr8vvou9iv2olgtj.jpg"></div>
+            <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/ae8orkrhwemrjwckfgyf.jpg"></div>
+            <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/addznvpvac6hqcowrmy5.jpg"></div>
+          </div></div>
+          <!-- page 2 -->
+          <div class="mnav2"><div class="mlogo">PHOTOS DU MONDE</div></div>
+          <div class="mhi2"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_300,h_200/rezclg8sxfoxmwcdqaa9.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="mhc"><div class="mh">Explorer le monde<br><em>à travers l'objectif.</em></div><div class="mb1">Voir les voyages</div><div class="mb2">Galerie</div></div>
+          <div class="mvoy">
+            <div class="mvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_300,h_150/qdxllapek6zg7fenbprd.jpg"><div class="mvc-ov"><div class="mvc-c">Cuba</div><div class="mvc-n">Musique & Couleurs</div></div></div>
+            <div class="mvc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_300,h_150/vfkhlxklxfoa3xmsivcl.jpg"><div class="mvc-ov"><div class="mvc-c">Éthiopie</div><div class="mvc-n">Entre désert & Volcans</div></div></div>
+          </div>
+          <div class="mgal"><div class="mgg">
+            <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/v8j2oxe6paim6i1gb7r2.jpg"></div>
+            <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/l7aoloqgkrcxcyym4ln0.jpg"></div>
+            <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/xpjf9wasgql2tjoazhxq.jpg"></div>
+            <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_85/photos-du-monde/w_150,h_100/dznaqdijcrrq8bypqnpo.jpg"></div>
+          </div></div>
+        </div></div>
       </div>
-      <div class="mgal"><div class="mgg">
-        <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/v8j2oxe6paim6i1gb7r2.jpg"></div>
-        <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/l7aoloqgkrcxcyym4ln0.jpg"></div>
-        <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/xpjf9wasgql2tjoazhxq.jpg"></div>
-        <div class="mgc"><img src="https://res.cloudinary.com/doxsjisyx/image/upload/c_fill,q_80/photos-du-monde/w_150,h_100/vfkhlxklxfoa3xmsivcl.jpg"></div>
-      </div></div>
-    </div></div>
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="bottom">
+      <div class="left-text">
+        <div class="tagline">Site web professionnel</div>
+        <div class="h1">Livré en<br><em>7 jours.</em></div>
+        <div class="offer">
+          <div class="price-new">500.-</div>
+          <div>
+            <div class="price-old">1200.-</div>
+            <div class="price-sub">+ 50.- / mois tout inclus</div>
+          </div>
+        </div>
+      </div>
+      <div class="right-cta">
+        <div class="cta">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp →
+        </div>
+        <div class="days">Design sur mesure · Sans engagement</div>
+      </div>
+    </div>
   </div>
-</div>
-<div class="bottom">
-  <div class="price"><div class="pnew">500.-</div><div class="pinfo"><div class="pold">Au lieu de 1200.-</div><div class="psub">+ 50.- / mois tout inclus</div></div></div>
-  <div class="cta"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp →</div>
-</div>
 </div>
 </body>
 </html>
