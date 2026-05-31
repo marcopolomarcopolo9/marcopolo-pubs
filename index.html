@@ -7,7 +7,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#111;padding:20px;font-family:'DM Sans',sans-serif}
-.ad{width:600px;height:600px;background:#080808;border-radius:12px;overflow:hidden;position:relative;display:flex;flex-direction:column;border:.5px solid rgba(200,169,110,.2)}
+.ad{width:600px;height:600px;background:#080808;border-radius:12px;overflow:hidden;position:relative;display:grid;grid-template-rows:90px 1fr 70px;border:.5px solid rgba(200,169,110,.2)}
 .glow{position:absolute;top:-60px;right:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(200,169,110,.1) 0%,transparent 70%);pointer-events:none;z-index:0}
 .deco{position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,transparent,#c8a96e 40%,#f5e4b8 50%,#c8a96e 60%,transparent);z-index:2}
 .top{padding:10px 26px 0;position:relative;z-index:2;flex-shrink:0}
